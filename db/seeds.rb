@@ -132,5 +132,123 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+## USERS
+
+puts "Re-creating Users ..."
+
+User.destroy_all
+
+User.create!({
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
+  email: Faker::Internet.email,
+  password: 'abc'
+})
+
+User.create!({
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
+  email: Faker::Internet.email,
+  password: 'abc'
+})
+
+User.create!({
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
+  email: Faker::Internet.email,
+  password: 'abc'
+})
+
+## Review
+
+puts "Re-creating Review ..."
+
+Review.destroy_all
+
+Review.create!({
+  product_id: 1,
+  user_id: 1,
+  description: Faker::Hipster.paragraph(1),
+  rating: 1
+})
+
+Review.create!({
+  product_id: 1,
+  user_id: 2,
+  description: Faker::Hipster.paragraph(1),
+  rating: 5
+})
+
+Review.create!({
+  product_id: 2,
+  user_id: 1,
+  description: Faker::Hipster.paragraph(1),
+  rating: 1
+})
+
+Review.create!({
+  product_id: 2,
+  user_id: 2,
+  description: Faker::Hipster.paragraph(1),
+  rating: 4
+})
+
+Review.create!({
+  product_id: 3,
+  user_id: 1,
+  description: Faker::Hipster.paragraph(1),
+  rating: 1
+})
+
+Review.create!({
+  product_id: 3,
+  user_id: 2,
+  description: Faker::Hipster.paragraph(1),
+  rating: 4
+})
+
+Review.create!({
+  product_id: 4,
+  user_id: 1,
+  description: Faker::Hipster.paragraph(1),
+  rating: 1
+})
+
+Review.create!({
+  product_id: 4,
+  user_id: 2,
+  description: Faker::Hipster.paragraph(1),
+  rating: 4
+})
+
+Review.create!({
+  product_id: 5,
+  user_id: 1,
+  description: Faker::Hipster.paragraph(1),
+  rating: 1
+})
+
+Review.create!({
+  product_id: 5,
+  user_id: 2,
+  description: Faker::Hipster.paragraph(1),
+  rating: 4
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 puts "DONE!"
