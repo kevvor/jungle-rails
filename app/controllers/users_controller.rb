@@ -19,7 +19,7 @@ class UsersController < ApplicationController
       :first_name,
       :last_name,
       :email,
-      :password_digest
+      :password
     )
   end
 
