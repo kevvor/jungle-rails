@@ -7,14 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
       <% puts 'erb: session_id', session[:user_id] %>
-      <% if 'cool_method' %>
-        <%= 'current_user.first_name' %> | <%= link_to "Logout", "/sessions/#{session[:user_id]}", html_options = {method: :delete} %>
+      <% if true %>
+        <%= 'current_user.first_name' %> | <%= link_to "Logout", "/sessions/#{session[:user_id]}",html_options = {method: :delete} %>
       <% else %>
         <%= link_to 'Login', '/sessions/new' %> | <%= link_to 'Signup', '/users/new' %>
       <% end %>
       <% yield %>
+
 
   <%= render 'layouts/top_nav' %>
 
