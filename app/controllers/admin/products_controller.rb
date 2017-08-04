@@ -39,5 +39,4 @@ class Admin::ProductsController < ApplicationController
       :price
     )
   end
-
 end

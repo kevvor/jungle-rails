@@ -9,12 +9,12 @@ class SessionsController < ApplicationController
       puts 'this is user id', session[:user_id]
       redirect_to :products
     else
-      redirect_to '/sessions/new'
+      redirect_to new_session_path
     end
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to '/sessions/new'
+    redirect_to new_user_path
   end
 end

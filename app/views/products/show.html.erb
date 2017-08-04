@@ -26,24 +26,28 @@
       </div>
 
       <div class="row">
-        <div class="col-sm-4">
-        <%= form_for [@product, Review.new] do |form| %>
-          <%= form.label :description %><br>
-          <%= form.text_area :description %><br>
-          <%= form.label :rating %><br>
-          <%= form.select :rating, [['1 - horrible', 1], ['2 - poor', 2], ['3 - mediocre', 3], ['4 - good', 4], ['5 - great', 5]] %><br>
-          <%= form.submit 'pls, share your opinion', class: 'btn btn-primary' %>
+          <div class="col-sm-4">
+          <%= form_for [@product, @review] do |form| %>
+            <%= form.label :description %><br>
+            <%= form.text_area :description %><br>
+            <%= form.label :rating %><br>
+            <%= form.select :rating, [['1 - horrible', 1], ['2 - poor', 2], ['3 - mediocre', 3], ['4 - good', 4], ['5 - great', 5]] %><br>
+            <%= form.submit 'pls, share your opinion', class: 'btn btn-primary' %>
+          </div>
         <% end %>
-        </div>
         <div class="col-sm-8">
         <% @reviews.each do |review| %>
           <dl class="dl-horizontal">
-              <dt>Name</dt>
-              <dd> <%= "#{review.user.first_name}" %> </dd>
-              <dt> Review </dt>
-              <dd> <%= "#{review.description}" %> </dd>
-              <dt>Rating</dt>
-              <dd> <%= "#{review.rating}/5" %> </dd>
+            <dt>Name</dt>
+            <dd> <%= "#{review.user.first_name}" %> </dd>
+            <dt> Review </dt>
+            <dd> <%= "#{review.description}" %> </dd>
+            <dt>Rating</dt>
+            <dd> <%= "#{review.rating}/5" %> </dd>
+            <% if review.user == current_user %>
+            <dt>Delete</dt>
+            <dd><%= link_to "delete", product_review_path(@product, review), method: :delete, :confirm => "Really?" %></dd>
+            <% end %>
           </dl>
         <% end %>
         </div>
@@ -52,4 +56,3 @@
 
   </article>
 </section>
-
