@@ -1,11 +1,15 @@
 <h1>Signup!</h1>
-
-<%= form_for @user do |f| %>
-
-  first name: <%= f.text_field :first_name %>
-  last name: <%= f.text_field :last_name %>
-  email: <%= f.text_field :email %>
-  password: <%= f.password_field :password %>
-  <%= f.submit "Submit" %>
-
+ <dl class="dl-horizontal">
+    <%= form_for @user do |f| %>
+    <dt> First Name </dt>
+    <dd> <%= f.text_field :first_name %> </dd>
+    <dt> Last Name </dt>
+    <dd> <%= f.text_field :last_name %> </dd>
+    <dt> Email </dt>
+    <dd> <%= f.text_field :email %> </dd>
+    <dt> Password </dt>
+    <dd> <%= f.password_field :password %> </dd>
+    <dt> <%= f.submit "Submit" %> </dt>
+  </dl>
 <% end %>
+

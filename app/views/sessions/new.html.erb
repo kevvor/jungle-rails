@@ -1,10 +1,14 @@
 <h1>Login</h1>
 
-<%= form_tag sessions_path do %>
+<dl class="dl-horizontal">
+  <%= form_tag sessions_path do %>
+    <dt> Email </dt>
+    <dd> <%= text_field_tag :email %> </dd>
+    <dt> Password </dt>
+    <dd> <%= password_field_tag :password %> </dd>
+    <dt> <%= submit_tag "Submit" %> </dt>
+  <% end %>
+</dl>
 
-  email: <%= text_field_tag :email %>
-  password: <%= password_field_tag :password %>
 
-<%= submit_tag 'Submit' %>
 
-<% end %>
