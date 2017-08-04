@@ -9,16 +9,9 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user, :logged_in?
 
-  # def cool_method
-  #   puts "i'm awesome"
-    # return false
-  # end
-
-
   private
 
   def cart
-    # value = cookies[:cart] || JSON.generate({})
     @cart ||= cookies[:cart].present? ? JSON.parse(cookies[:cart]) : {}
   end
   helper_method :cart

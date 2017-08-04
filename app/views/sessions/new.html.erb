@@ -1,8 +1,6 @@
 <h1>Login</h1>
 
-<%= form_tag '/sessions' do %>
-
-  <% puts 'login.html: sessionID', session[:user_id] %>
+<%= form_tag sessions_path do %>
 
   email: <%= text_field_tag :email %>
   password: <%= password_field_tag :password %>

@@ -1,10 +1,6 @@
 class CartsController < ApplicationController
 
   def show
-    if cart == {}
-      flash[:notice] = "Post successfully created"
-      puts 'notice'
-    end
   end
 
   def add_item

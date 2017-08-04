@@ -8,8 +8,6 @@ class ReviewsController < ApplicationController
     @review.product_id = params[:product_id]
 
     if @review.save
-      puts 'this is the saved review'
-      puts @review.inspect
       redirect_to :back
     else
       redirect_to :back
