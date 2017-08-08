@@ -235,20 +235,4 @@ Review.create!({
   rating: 4
 })
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-puts "DONE!"
+puts "SEEDING DONE"

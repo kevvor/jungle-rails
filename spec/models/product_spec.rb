@@ -8,7 +8,7 @@ RSpec.describe Product, type: :model do
       @product = @cat.products.new({
         name: 'skates',
         price: 9.99,
-        quantity: 10,
+        quantity: 10
         })
       @product.save!
 
@@ -20,9 +20,9 @@ RSpec.describe Product, type: :model do
       @product = @cat.products.new({
         name: nil,
         price: 9.99,
-        quantity: 10,
+        quantity: 10
         })
-      expect(@product.name). to be_present
+      expect(@product.name). to be_falsy
     end
 
     it 'should have a price' do
@@ -30,9 +30,9 @@ RSpec.describe Product, type: :model do
       @product = @cat.products.new({
         name: 'skates',
         price: nil,
-        quantity: 10,
+        quantity: 10
         })
-      expect(@product.price). to be_present
+      expect(@product.price). to be_falsy
     end
 
     it 'should have a quantity' do
@@ -40,18 +40,18 @@ RSpec.describe Product, type: :model do
       @product = @cat.products.new({
         name: 'skates',
         price: 9.99,
-        quantity: nil,
+        quantity: nil
         })
-      expect(@product.quantity). to be_present
+      expect(@product.quantity). to be_falsy
     end
 
     it 'should have a category' do
       @product = Product.new({
         name: 'skates',
         price: nil,
-        quantity: 10,
+        quantity: 10
         })
-      expect(@product.category). to be_present
+      expect(@product.category). to be_falsy
     end
   end
 end
